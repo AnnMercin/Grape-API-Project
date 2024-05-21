@@ -1,0 +1,86 @@
+Started GET "/" for ::1 at 2023-10-17 12:23:39 +0530
+  [1m[35m (71.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/annmercinks/.rvm/gems/ruby-3.0.1/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/annmercinks/.rvm/gems/ruby-3.0.1/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.9ms | Allocations: 577)
+Completed 200 OK in 89ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 10518)
+
+
+Started GET "/" for ::1 at 2023-10-17 12:25:22 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/annmercinks/.rvm/gems/ruby-3.0.1/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/annmercinks/.rvm/gems/ruby-3.0.1/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/api/users" for ::1 at 2023-10-17 12:25:46 +0530
+  
+NameError (uninitialized constant MyApi::User):
+  
+app/api/my_api.rb:8:in `block (2 levels) in <class:MyApi>'
+Started GET "/api/users" for ::1 at 2023-10-17 12:26:39 +0530
+  
+NameError (uninitialized constant MyApi::User):
+  
+app/api/my_api.rb:8:in `block (2 levels) in <class:MyApi>'
+Started GET "/api/users" for ::1 at 2023-10-17 12:26:56 +0530
+  
+NameError (uninitialized constant MyApi::User):
+  
+app/api/my_api.rb:8:in `block (2 levels) in <class:MyApi>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (36.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-17 07:02:52.818124', '2023-10-17 07:02:52.818127') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20231017070226)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231017070226') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "John Doe"], ["created_at", "2023-10-17 07:04:33.822994"], ["updated_at", "2023-10-17 07:04:33.822994"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Mercin"], ["created_at", "2023-10-17 07:05:28.719251"], ["updated_at", "2023-10-17 07:05:28.719251"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-10-17 12:52:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/annmercinks/.rvm/gems/ruby-3.0.1/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/annmercinks/.rvm/gems/ruby-3.0.1/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 577)
+Completed 200 OK in 10ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 7355)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-10-17 12:52:51 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2023-10-17 12:52:54 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/api/users" for 127.0.0.1 at 2023-10-17 12:53:25 +0530
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/api/users" for ::1 at 2023-10-17 13:16:01 +0530
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/api/users/1" for ::1 at 2023-10-17 13:16:12 +0530
+Started GET "/api/users" for ::1 at 2023-10-17 13:16:23 +0530
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (15.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "gings"], ["created_at", "2024-02-07 05:30:34.428961"], ["updated_at", "2024-02-07 05:30:34.428961"]]
+  [1m[36mTRANSACTION (72.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "mercin"], ["created_at", "2024-02-07 05:30:52.718612"], ["updated_at", "2024-02-07 05:30:52.718612"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/api/v1/users" for ::1 at 2024-02-07 11:02:55 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/users" for ::1 at 2024-02-07 11:08:11 +0530
+Started GET "/api/v1/users" for ::1 at 2024-02-07 11:08:20 +0530
+Started GET "/api/v1/users" for ::1 at 2024-02-07 11:15:29 +0530
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
